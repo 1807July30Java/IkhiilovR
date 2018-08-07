@@ -1,6 +1,8 @@
 package com.revature.oop;
 
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.TreeSet;
 
 public class DNA {
@@ -34,52 +36,78 @@ public class DNA {
 			
 	}
 	
-	public boolean checkMutation() {
+	public boolean checkMutation(String w1, String w2) {
+		/*
+		 *  change in one letter = mutation
+		 */
+		int count = 0;
+		for (int i = 0; i < w1.length();i++) {
+			
+			if(w1.charAt(i) != w2.charAt(2)) {
+				count ++;
+				if (count > 1)
+					return false;
+			}
+		}
 		
-		return false;
+		return (count == 1);
 		
 	}
 	
 	private void mutate(){
-		
-		int currentNumMutations =0;
-		for (int i =0; i< bank.length; i++) {
+		/*
+		 * add current string into a queue
+		 * pop string into another queue 
+		 * then find all 1 mutations from initial queue and add to the 2nd queue
+		 * if the string == end string return
+		 * 
+		 * 		0 - 	initial
+		 * 1	1	1 	mutations
+		 * 2	2	2	mutations
+		 * 
+		 */
+		Queue<String> currentMutation = new LinkedList<String>();
+		currentMutation.add(start);
+		Queue<String> nextMutation = new LinkedList<String>();
 			
-			for(int j = 0; j < this.start.length(); j++) {
-				
-				if(current.charAt(j) != bank[i].charAt(j)) {
-					
-					currentNumMutations ++;
-					if(currentNumMutations > 1) {
-						currentNumMutations = 0;
-						break;
-					}
+		while(!currentMutation.isEmpty()){
+			String currentDNA = currentMutation.poll();
+			if(currentDNA.equals(end)) 
+				return;
+			for(String b:bank){
+				if(checkMutation(currentDNA, b)){
+					nextMutation.add(b);
 				}
-				
 			}
-			
-		}	
+		}
+		this.numMutations++;
 		
+		/*
+		 *  next step would be to have the next mutation be the current one
+		 *  and repeat the process again.
+		 *  going from  0 -> 1-> 2 -> etc. mutations 
+		 *  until you can reach the end string if possible
+		 */
 	}
+		
+		
+		
+	
 	
 	public int checkPath() {
 		
 		/*
 		 * base cases
 		 */
-		if (!endCheck()) 
+		if (!endCheck()) {
+			this.numMutations = -1;
 			return -1;
+		}
 	
 		if (start.equals(end))
 			return 0;
 		
-		
-		while(this.numMutations < bank.length && !current.equals(end) ){
-			
-			mutate();
-			this.numMutations ++;
-			
-		}
+		mutate();
 		
 		
 		return this.numMutations;

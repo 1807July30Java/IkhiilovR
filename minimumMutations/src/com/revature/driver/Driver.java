@@ -16,6 +16,7 @@ public class Driver {
 		for (int i = 0; i < input.getLines(); i++) {
 			DNA temp = new DNA(input.getStart(i), input.getEnd(i), input.getBank(i));
 			dna.add(temp);
+			temp.checkPath();
 			System.out.println(temp);
 		}
 	}
