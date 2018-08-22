@@ -1,0 +1,15 @@
+2018-08-20 11:34:19 INFO  root:40 - retrieved bank account with id: 1
+2018-08-20 11:39:54 INFO  root:75 - retrieved employee account: Employee [id=0, username=admin, password=pass, name=null, lastname=null, isManager=0, manager=0, email=null]
+2018-08-20 11:40:26 INFO  root:41 - retrieved bank account with id: 1
+2018-08-20 11:40:27 INFO  root:75 - retrieved employee account: Employee [id=0, username=admin, password=pass, name=null, lastname=null, isManager=0, manager=0, email=null]
+2018-08-20 11:42:08 INFO  root:41 - retrieved bank account with id: 1
+2018-08-20 11:42:09 INFO  root:75 - retrieved employee account: Employee [id=1, username=admin, password=pass, name=null, lastname=null, isManager=0, manager=0, email=null]
+2018-08-20 11:54:11 INFO  root:41 - retrieved bank account with id: 1
+2018-08-20 11:54:12 INFO  root:77 - retrieved employee account: Employee [id=1, username=admin, password=pass, name=null, lastname=null, isManager=0, manager=0, email=null]
+2018-08-20 11:54:14 INFO  root:115 - retrieved employee account: Employee [id=1, username=admin, password=pass, name=null, lastname=null, isManager=0, manager=0, email=null]
+2018-08-20 15:33:51 INFO  root:41 - retrieved employee with id: 1
+2018-08-20 15:33:52 INFO  root:77 - retrieved employee account: Employee [id=1, username=admin, password=pass, name=null, lastname=null, isManager=0, manager=0, email=null]
+2018-08-20 15:33:53 INFO  root:115 - retrieved employee account: Employee [id=1, username=admin, password=pass, name=null, lastname=null, isManager=0, manager=0, email=null]
+2018-08-21 21:02:50 INFO  root:41 - retrieved employee with id: 1
+2018-08-21 21:02:53 INFO  root:77 - retrieved employee account: Employee [id=1, username=admin, password=pass, name=null, lastname=null, isManager=0, manager=0, email=null]
+2018-08-21 21:02:55 INFO  root:115 - retrieved employee account: Employee [id=1, username=admin, password=pass, name=null, lastname=null, isManager=0, manager=0, email=null]
