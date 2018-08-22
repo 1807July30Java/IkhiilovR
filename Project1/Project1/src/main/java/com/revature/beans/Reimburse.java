@@ -2,6 +2,21 @@ package com.revature.beans;
 
 public class Reimburse {
 
+	public Reimburse(int process, int employeeID, double value, String type) {
+		super();
+		this.process = process;
+		this.employeeID = employeeID;
+		this.value = value;
+		this.type = type;
+	}
+	public Reimburse(int id, int process, int employeeID, double value, String type) {
+		super();
+		this.id = id;
+		this.process = process;
+		this.employeeID = employeeID;
+		this.value = value;
+		this.type = type;
+	}
 	public Reimburse(int process, int employeeID) {
 		super();
 		this.process = process;
@@ -16,9 +31,9 @@ public class Reimburse {
 	private int id;
 	private int process;
 	private int employeeID;
+	private double value;
+	private String type;
 	
-	//value
-	//type
 	 
 	public int getId() {
 		return id;
@@ -40,7 +55,8 @@ public class Reimburse {
 	}
 	@Override
 	public String toString() {
-		return "Reimburse [id=" + id + ", process=" + process + ", employeeID=" + employeeID + "]";
+		return "Reimburse [id=" + id + ", process=" + process + ", employeeID=" + employeeID + ", value=" + value
+				+ ", type=" + type + "]";
 	}
 	@Override
 	public int hashCode() {
@@ -49,6 +65,10 @@ public class Reimburse {
 		result = prime * result + employeeID;
 		result = prime * result + id;
 		result = prime * result + process;
+		result = prime * result + ((type == null) ? 0 : type.hashCode());
+		long temp;
+		temp = Double.doubleToLongBits(value);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
 		return result;
 	}
 	@Override
@@ -66,7 +86,26 @@ public class Reimburse {
 			return false;
 		if (process != other.process)
 			return false;
+		if (type == null) {
+			if (other.type != null)
+				return false;
+		} else if (!type.equals(other.type))
+			return false;
+		if (Double.doubleToLongBits(value) != Double.doubleToLongBits(other.value))
+			return false;
 		return true;
+	}
+	public double getValue() {
+		return value;
+	}
+	public void setValue(double value) {
+		this.value = value;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
 	}
 	
 	
