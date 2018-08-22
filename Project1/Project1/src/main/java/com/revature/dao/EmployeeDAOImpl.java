@@ -128,4 +128,37 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		return e;
 	}
 
+	@Override
+	public boolean isValidEmployee(String username, String password) {
+		
+		PreparedStatement pstmt = null;
+		try (Connection con = ConnectionUtil.getConnectionFromFile(filename)) {
+
+			// use a prepared statement
+			String sql = "SELECT * FROM EMPLOYEE WHERE USERNAME = ? AND PASSWORD = ? ";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, username.trim());
+			pstmt.setString(2, password);
+			
+			ResultSet rs = pstmt.executeQuery();
+
+			// do something with result
+			if (rs.next()) {
+				int id = rs.getInt("EMPLOYEE_ID");
+				//log.info("Retrieved employee with id "+id);
+				
+				return true;
+			} else {
+				//log.warn("No matching employee found");
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		return false;
+	}
+
 }

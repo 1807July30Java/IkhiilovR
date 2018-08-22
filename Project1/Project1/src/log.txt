@@ -13,3 +13,41 @@
 2018-08-21 21:02:50 INFO  root:41 - retrieved employee with id: 1
 2018-08-21 21:02:53 INFO  root:77 - retrieved employee account: Employee [id=1, username=admin, password=pass, name=null, lastname=null, isManager=0, manager=0, email=null]
 2018-08-21 21:02:55 INFO  root:115 - retrieved employee account: Employee [id=1, username=admin, password=pass, name=null, lastname=null, isManager=0, manager=0, email=null]
+2018-08-21 21:33:48 INFO  root:41 - retrieved employee with id: 1
+2018-08-21 21:33:50 INFO  root:77 - retrieved employee account: Employee [id=1, username=admin, password=pass, name=null, lastname=null, isManager=0, manager=0, email=null]
+2018-08-21 21:33:52 INFO  root:115 - retrieved employee account: Employee [id=1, username=admin, password=pass, name=null, lastname=null, isManager=0, manager=0, email=null]
+2018-08-21 21:33:54 INFO  root:147 - Retrieved employee with id 1
+2018-08-21 22:24:28 INFO  root:49 - Error getting employees iotrace: java.io.FileNotFoundException: connection.properties (The system cannot find the file specified)
+2018-08-21 22:24:28 INFO  root:86 - Error getting employee id: 1
+iotrace: java.io.FileNotFoundException: connection.properties (The system cannot find the file specified)
+2018-08-21 22:24:28 INFO  root:124 - Error getting employee username: admin
+iotrace: java.io.FileNotFoundException: connection.properties (The system cannot find the file specified)
+2018-08-21 22:25:34 INFO  root:49 - Error getting employees iotrace: java.io.FileNotFoundException: connection.properties (The system cannot find the file specified)
+2018-08-21 22:25:34 INFO  root:86 - Error getting employee id: 1
+iotrace: java.io.FileNotFoundException: connection.properties (The system cannot find the file specified)
+2018-08-21 22:25:34 INFO  root:124 - Error getting employee username: admin
+iotrace: java.io.FileNotFoundException: connection.properties (The system cannot find the file specified)
+2018-08-21 22:25:36 INFO  root:49 - Error getting employees iotrace: java.io.FileNotFoundException: connection.properties (The system cannot find the file specified)
+2018-08-21 22:25:36 INFO  root:86 - Error getting employee id: 1
+iotrace: java.io.FileNotFoundException: connection.properties (The system cannot find the file specified)
+2018-08-21 22:25:36 INFO  root:124 - Error getting employee username: admin
+iotrace: java.io.FileNotFoundException: connection.properties (The system cannot find the file specified)
+2018-08-21 22:28:05 INFO  root:49 - Error getting employees iotrace: java.io.FileNotFoundException: connection.properties (The system cannot find the file specified)
+2018-08-21 22:28:05 INFO  root:86 - Error getting employee id: 1
+iotrace: java.io.FileNotFoundException: connection.properties (The system cannot find the file specified)
+2018-08-21 22:28:05 INFO  root:124 - Error getting employee username: admin
+iotrace: java.io.FileNotFoundException: connection.properties (The system cannot find the file specified)
+2018-08-21 22:28:54 INFO  root:49 - Error getting employees iotrace: java.io.FileNotFoundException: connection.properties (The system cannot find the file specified)
+2018-08-21 22:28:54 INFO  root:86 - Error getting employee id: 1
+iotrace: java.io.FileNotFoundException: connection.properties (The system cannot find the file specified)
+2018-08-21 22:28:54 INFO  root:124 - Error getting employee username: admin
+iotrace: java.io.FileNotFoundException: connection.properties (The system cannot find the file specified)
+2018-08-21 22:29:09 INFO  root:41 - retrieved employee with id: 1
+2018-08-21 22:29:11 INFO  root:77 - retrieved employee account: Employee [id=1, username=admin, password=pass, name=null, lastname=null, isManager=0, manager=0, email=null]
+2018-08-21 22:29:12 INFO  root:115 - retrieved employee account: Employee [id=1, username=admin, password=pass, name=null, lastname=null, isManager=0, manager=0, email=null]
+2018-08-21 22:33:25 INFO  root:41 - retrieved employee with id: 1
+2018-08-21 22:33:26 INFO  root:77 - retrieved employee account: Employee [id=1, username=admin, password=pass, name=null, lastname=null, isManager=0, manager=0, email=null]
+2018-08-21 22:33:28 INFO  root:115 - retrieved employee account: Employee [id=1, username=admin, password=pass, name=null, lastname=null, isManager=0, manager=0, email=null]
+2018-08-21 22:43:35 INFO  root:41 - retrieved employee with id: 1
+2018-08-21 22:43:36 INFO  root:77 - retrieved employee account: Employee [id=1, username=admin, password=pass, name=null, lastname=null, isManager=0, manager=0, email=null]
+2018-08-21 22:43:37 INFO  root:115 - retrieved employee account: Employee [id=1, username=admin, password=pass, name=null, lastname=null, isManager=0, manager=0, email=null]

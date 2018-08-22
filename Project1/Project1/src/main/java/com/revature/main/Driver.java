@@ -14,6 +14,11 @@ public class Driver {
 		System.out.println(test.getEmployees());
 		System.out.println(test.getEmployeeByID(1));
 		System.out.println(test.getEmployeeByUsername("admin"));
+		if(test.isValidEmployee("admin", "pass"))
+			System.out.println("valid");
+		else {
+			System.out.println("negative");
+		}
 		
 		
 	}
