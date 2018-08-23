@@ -130,7 +130,6 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
 	@Override
 	public boolean isValidEmployee(String username, String password) {
-		
 		PreparedStatement pstmt = null;
 		try (Connection con = ConnectionUtil.getConnectionFromFile(filename)) {
 
@@ -145,11 +144,11 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 			// do something with result
 			if (rs.next()) {
 				int id = rs.getInt("EMPLOYEE_ID");
-				//log.info("Retrieved employee with id "+id);
+				log.info("Retrieved employee with id "+id);
 				
 				return true;
 			} else {
-				//log.warn("No matching employee found");
+				log.warn("No matching employee found");
 			}
 
 		} catch (SQLException e) {
