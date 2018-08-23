@@ -246,7 +246,7 @@ $RECYCLE.BIN/
 target/
 
 #ignore properties file
-/connection.properties
+/resorces/connection.properties
 
 #ignore log file
 /src/log.txt
