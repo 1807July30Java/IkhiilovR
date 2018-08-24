@@ -1,35 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="http://java.sun.com/xml/ns/javaee"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-	version="2.5">
-	<display-name>Project1</display-name>
-
-	<servlet>
-		<servlet-name>Login</servlet-name>
-		<servlet-class>com.revature.servlet.LoginServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>Login</servlet-name>
-		<url-pattern>/login</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>SessionServlet</servlet-name>
-		<servlet-class>com.revature.servlet.SessionServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>SessionServlet</servlet-name>
-		<url-pattern>/session</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>ProfileServlet</servlet-name>
-		<servlet-class>com.revature.servlet.ProfileServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>ProfileServlet</servlet-name>
-		<url-pattern>/profile</url-pattern>
-	</servlet-mapping>
-
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <display-name>Project1</display-name>
+  <servlet>
+    <servlet-name>Login</servlet-name>
+    <servlet-class>com.revature.servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Login</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SessionServlet</servlet-name>
+    <servlet-class>com.revature.servlet.SessionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SessionServlet</servlet-name>
+    <url-pattern>/session</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ProfileServlet</servlet-name>
+    <servlet-class>com.revature.servlet.ProfileServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProfileServlet</servlet-name>
+    <url-pattern>/profile</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>managerProfile</display-name>
+    <servlet-name>managerProfile</servlet-name>
+    <servlet-class>com.revature.servlet.managerProfile</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>managerProfile</servlet-name>
+    <url-pattern>/managerProfile</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>managersEmployees</display-name>
+    <servlet-name>managersEmployees</servlet-name>
+    <servlet-class>com.revature.servlet.managersEmployees</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>managersEmployees</servlet-name>
+    <url-pattern>/managersEmployees</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ManagerGetEmployees</display-name>
+    <servlet-name>ManagerGetEmployees</servlet-name>
+    <servlet-class>com.revature.servlet.ManagerGetEmployees</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ManagerGetEmployees</servlet-name>
+    <url-pattern>/ManagerGetEmployees</url-pattern>
+  </servlet-mapping>
 </web-app>

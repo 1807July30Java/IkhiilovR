@@ -9,5 +9,5 @@ public interface EmployeeDAO {
 	public Employee getEmployeeByID(int id);
 	public Employee getEmployeeByUsername(String Username);
 	public boolean isValidEmployee(String username, String password);
-
+	public List<Employee> getEmployeesForManager(String username);
 }

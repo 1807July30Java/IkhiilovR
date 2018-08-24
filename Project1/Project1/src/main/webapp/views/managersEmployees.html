@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+<!--===============================================================================================-->  
+  <link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="styles/font-awesome.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="styles/animate.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="styles/select2.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="styles/perfect-scrollbar.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="styles/util.css">
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+<!--===============================================================================================-->
+
+
+    <title>Manager Login</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="styles/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+     <link href="styles/style.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <h1 class="site-heading text-center text-white d-none d-lg-block">
+      <span class="site-heading-upper text-primary mb-3">My Employees</span>
+    </h1>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Start Bootstrap</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav mx-auto">
+             <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="managerProfile">Homepage</a>
+            </li>
+            <li class="nav-item active px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="managersEmployees">Employees</a>
+              <span class="sr-only">(current)</span>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="reimbursement.html">Reimbursement</a>
+            </li>
+           
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    <div>
+    <div class="container-table100">
+      <div class="wrap-table100">
+        <div class="table100 ver1">
+          <div class="table100-firstcol">
+            <table>
+              <thead>
+                <tr class="row100 head">
+                  <th class="cell100 column1">Employees</th>
+                </tr>
+              </thead>
+              <tbody id = "employeeTableUsername">
+           
+              </tbody>
+            </table>
+          </div>
+          
+          <div class="wrap-table100-nextcols js-pscroll">
+            <div class="table100-nextcols">
+              <table>
+                <thead>
+                  <tr class="row100 head">
+                    <th class="cell100 column2">First Name</th>
+                    <th class="cell100 column3">Last Name</th>
+                    <th class="cell100 column4">Email</th>
+                    <th class="cell100 column5">Password</th>
+                    <th class="cell100 column6">Number of Reimbursements</th>
+                  </tr>
+                </thead>
+                <tbody id="employeeTableBody" >
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+    
+<!--===============================================================================================-->  
+  <script src="scripts/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+  <script src="scripts/popper.js"></script>
+  <script src="scripts/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+  <script src="scripts/select2.min.js"></script>
+<!--===============================================================================================-->
+  <script src="scripts/perfect-scrollbar.min.js"></script>
+  <script>
+    $('.js-pscroll').each(function(){
+      var ps = new PerfectScrollbar(this);
+
+      $(window).on('resize', function(){
+        ps.update();
+      })
+
+      $(this).on('ps-x-reach-start', function(){
+        $(this).parent().find('.table100-firstcol').removeClass('shadow-table100-firstcol');
+      });
+
+      $(this).on('ps-scroll-x', function(){
+        $(this).parent().find('.table100-firstcol').addClass('shadow-table100-firstcol');
+      });
+
+    });
+
+    
+    
+    
+  </script>
+<!--===============================================================================================-->
+  <script src="scripts/main.js"></script>
+    
+
+
+  </body>
+<script src="scripts/getEmployeesForManager.js"></script>
+</html>

@@ -60,7 +60,11 @@ public class LoginServlet extends HttpServlet{
 		            session.setAttribute("email", e.getEmail());
 		            session.setAttribute("problem", null);
 		            
-					resp.sendRedirect("profile");
+		            if (e.getIsManager() == 1) {
+		            	resp.sendRedirect("managerProfile");
+		            }else {
+		            	resp.sendRedirect("profile");
+		            }
 				}else {
 					resp.sendRedirect("login");
 				}

@@ -160,4 +160,41 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		return false;
 	}
 
+	@Override
+	public List<Employee> getEmployeesForManager(String username) {
+
+		List<Employee> el = new ArrayList<>();
+		PreparedStatement pstmt = null;
+		
+		try(Connection con = ConnectionUtil.getConnectionFromFile(filename)){
+			String sql = "SELECT * FROM EMPLOYEE WHERE EMPLOYEE_MANAGER = (SELECT EMPLOYEE_ID FROM EMPLOYEE WHERE USERNAME = ?)";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, username);
+			ResultSet rs = pstmt.executeQuery();
+			
+			while (rs.next()){
+				int id = rs.getInt("EMPLOYEE_ID");
+				String eUsername = rs.getString("USERNAME");
+				String password = rs.getString("PASSWORD"); 
+				String name = rs.getString("EMLOYEE_NAME");
+				String lastname = rs.getString("EMPLOYEE_LASTNAME");
+				int isManager = rs.getInt("EMPLOYEE_IS_MANAGER");
+				int manager = rs.getInt("EMPLOYEE_MANAGER");
+				String email = rs.getString("EMPLOYEE_EMAIL");
+			
+				el.add(new Employee(id, eUsername, password, name, lastname, isManager, manager, email));
+				log.info("retrieved employee with id: " + id);
+			}
+			
+			con.close();
+		} catch (SQLException e) {
+			log.info("Error getting employees sqltrace: " + e);
+			//e.printStackTrace();
+		} catch (IOException e) {
+			log.info("Error getting employees iotrace: " + e);
+			//e.printStackTrace();
+		}
+		return el;
+	}
+
 }

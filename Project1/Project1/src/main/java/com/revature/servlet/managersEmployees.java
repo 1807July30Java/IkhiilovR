@@ -8,15 +8,15 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class SessionServlet
+ * Servlet implementation class managersEmployees
  */
-public class SessionServlet extends HttpServlet {
+public class managersEmployees extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SessionServlet() {
+    public managersEmployees() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -26,19 +26,11 @@ public class SessionServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
-		if(session != null) {
-			response.setContentType("application/json");
-			response.getWriter().write("{\"username\":\"" + session.getAttribute("username") + "\", "
-					+ "\"password\":\"" + session.getAttribute("password") + "\", " 
-					+ "\"firstName\":\"" + session.getAttribute("firstName") + "\", " 
-					+ "\"lastName\":\"" + session.getAttribute("lastName") + "\", " 
-					+ "\"email\":\"" + session.getAttribute("email") + "\", " 
-					+ "\"manager\":\"" + session.getAttribute("manager") + "\", " 
-					+ "\"isManager\":\"" + session.getAttribute("isManager") + "\"} "); 
-		
-		}else {
-			response.setContentType("application/json");
-			response.getWriter().write("{\"username\": null}");
+		// check whether a Session exists
+		if (session != null && session.getAttribute("username") != null) {
+			request.getRequestDispatcher("views/managersEmployees.html").forward(request, response);
+		} else {
+			response.sendRedirect("login");
 		}
 	}
 
