@@ -15,8 +15,12 @@ public class DispatcherUtil {
 				if (get.equals("forManager")) {
 					return om.writeValueAsString(ds.allEmployeesForManager(username));
 				}
-			
+			}else if (entity.equals("reimbursement")) {
+				if (get.equals("image")) {
+					return (ds.getImageForRequest(0));
+				}
 			}
+			
 		} catch (JsonProcessingException e) {
 			e.printStackTrace();
 		}

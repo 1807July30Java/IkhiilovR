@@ -1,70 +1,57 @@
 package com.revature.beans;
 
-public class Reimburse {
+import java.io.InputStream;
 
-	public Reimburse(int process, int employeeID, double value, String type) {
+public class Reimburse {
+	
+	public Reimburse(int status, int employeeID, double value, String type, InputStream image) {
 		super();
-		this.process = process;
+		this.status = status;
 		this.employeeID = employeeID;
 		this.value = value;
 		this.type = type;
+		this.image = image;
 	}
-	public Reimburse(int id, int process, int employeeID, double value, String type) {
+	public Reimburse(int employeeID, double value, String type, InputStream image) {
 		super();
-		this.id = id;
-		this.process = process;
 		this.employeeID = employeeID;
 		this.value = value;
 		this.type = type;
+		this.image = image;
+		this.status = -1;
 	}
-	public Reimburse(int process, int employeeID) {
-		super();
-		this.process = process;
-		this.employeeID = employeeID;
-	}
-	public Reimburse(int id, int process, int employeeID) {
+	public Reimburse(int id, int status, int employeeID, double value, String type, InputStream image) {
 		super();
 		this.id = id;
-		this.process = process;
+		this.status = status;
 		this.employeeID = employeeID;
+		this.value = value;
+		this.type = type;
+		this.image = image;
 	}
+
+	
 	private int id;
-	private int process;
+	private int status;
 	private int employeeID;
 	private double value;
 	private String type;
+	private InputStream image;
 	
-	 
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public int getProcess() {
-		return process;
-	}
-	public void setProcess(int process) {
-		this.process = process;
-	}
-	public int getEmployeeID() {
-		return employeeID;
-	}
-	public void setEmployeeID(int employeeID) {
-		this.employeeID = employeeID;
-	}
+	
 	@Override
 	public String toString() {
-		return "Reimburse [id=" + id + ", process=" + process + ", employeeID=" + employeeID + ", value=" + value
-				+ ", type=" + type + "]";
+		return "Reimburse [id=" + id + ", status=" + status + ", employeeID=" + employeeID + ", value=" + value
+				+ ", type=" + type + ", image=" + image + "]";
 	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + employeeID;
 		result = prime * result + id;
-		result = prime * result + process;
+		result = prime * result + status;
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
 		long temp;
 		temp = Double.doubleToLongBits(value);
@@ -84,7 +71,7 @@ public class Reimburse {
 			return false;
 		if (id != other.id)
 			return false;
-		if (process != other.process)
+		if (status != other.status)
 			return false;
 		if (type == null) {
 			if (other.type != null)
@@ -94,6 +81,24 @@ public class Reimburse {
 		if (Double.doubleToLongBits(value) != Double.doubleToLongBits(other.value))
 			return false;
 		return true;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getStatus() {
+		return status;
+	}
+	public void setStatus(int status) {
+		this.status = status;
+	}
+	public int getEmployeeID() {
+		return employeeID;
+	}
+	public void setEmployeeID(int employeeID) {
+		this.employeeID = employeeID;
 	}
 	public double getValue() {
 		return value;
@@ -107,6 +112,14 @@ public class Reimburse {
 	public void setType(String type) {
 		this.type = type;
 	}
+	public InputStream getImage() {
+		return image;
+	}
+	public void setImage(InputStream image) {
+		this.image = image;
+	}
 	
+	
+
 	
 }

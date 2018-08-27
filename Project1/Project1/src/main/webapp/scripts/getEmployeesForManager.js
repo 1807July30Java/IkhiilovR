@@ -61,5 +61,5 @@ function populateEmployee(xhr) {
 };
 
 window.onload = function() {
-	sendAjaxGet("http://localhost:8084/Project1/ManagerGetEmployees?entity=employees&get=forManager", populateEmployee);
+	sendAjaxGet("http://localhost:8084/Project1/data?entity=employees&get=forManager", populateEmployee);
 }

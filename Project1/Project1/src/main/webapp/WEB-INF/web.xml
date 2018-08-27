@@ -47,12 +47,52 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>ManagerGetEmployees</display-name>
-    <servlet-name>ManagerGetEmployees</servlet-name>
-    <servlet-class>com.revature.servlet.ManagerGetEmployees</servlet-class>
+    <display-name>DataServlet</display-name>
+    <servlet-name>DataServlet</servlet-name>
+    <servlet-class>com.revature.servlet.DataServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>ManagerGetEmployees</servlet-name>
-    <url-pattern>/ManagerGetEmployees</url-pattern>
+    <servlet-name>DataServlet</servlet-name>
+    <url-pattern>/data</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ReimbursementServlet</display-name>
+    <servlet-name>ReimbursementServlet</servlet-name>
+    <servlet-class>com.revature.servlet.ReimbursementServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReimbursementServlet</servlet-name>
+    <url-pattern>/reimbursement</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RequestServlet</display-name>
+    <servlet-name>RequestServlet</servlet-name>
+    <servlet-class>com.revature.servlet.RequestServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RequestServlet</servlet-name>
+    <url-pattern>/newRequest</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LogoutServlet</display-name>
+    <servlet-name>LogoutServlet</servlet-name>
+    <servlet-class>com.revature.servlet.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogoutServlet</servlet-name>
+    <url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AllReimburseServlets</display-name>
+    <servlet-name>AllReimburseServlets</servlet-name>
+    <servlet-class>com.revature.servlet.AllReimburseServlets</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AllReimburseServlets</servlet-name>
+    <url-pattern>/allReimbursements</url-pattern>
   </servlet-mapping>
 </web-app>
