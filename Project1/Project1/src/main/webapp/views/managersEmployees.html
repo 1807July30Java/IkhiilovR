@@ -3,6 +3,8 @@
 
 <head>
 
+<script src="scripts/checkManager.js"></script>
+
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -27,6 +29,8 @@
 
 
 <title>Manager Login</title>
+
+
 
 <!-- Bootstrap core CSS -->
 <link href="styles/bootstrap.min.css" rel="stylesheet">
@@ -72,10 +76,10 @@
 					</li>
 					<li class="nav-item px-lg-4"><a
 						class="nav-link text-uppercase text-expanded"
-						href="allReimbursements">All Reimbursements</a></li>
+						href="allReimbursements">My Reimbursements</a></li>
 					<li class="nav-item px-lg-4"><a
-						class="nav-link text-uppercase text-expanded" href="reimbursement">New Reimbursement</a>
-					</li>
+						class="nav-link text-uppercase text-expanded" href="reimbursement">New
+							Reimbursement</a></li>
 					<li class="nav-item px-lg-4"><a
 						class="nav-link text-uppercase text-expanded" href="logout">Logout</a></li>
 
@@ -111,7 +115,7 @@
 										<th class="cell100 column3">Last Name</th>
 										<th class="cell100 column4">Email</th>
 										<th class="cell100 column5">Password</th>
-										<th class="cell100 column6">Number of Reimbursements</th>
+										<th class="cell100 column6">Reimbursements</th>
 									</tr>
 								</thead>
 								<tbody id="employeeTableBody">
@@ -126,51 +130,112 @@
 	</div>
 
 
+	<div id="reimburseTable" style="display: none">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100 ver1">
+					<div class="table100-firstcol">
+						<table>
+							<thead>
+								<tr class="row100 head">
+									<th class="cell100 column1">Reimburse ID</th>
+								</tr>
+							</thead>
+							<tbody id="reimburseTableEmployee">
+
+							</tbody>
+						</table>
+					</div>
+
+					<div class="wrap-table100-nextcols js-pscroll">
+						<div class="table100-nextcols">
+							<table>
+								<thead>
+									<tr class="row100 head">
+										<th class="cell100 column2">Status</th>
+										<th class="cell100 column3">Description</th>
+										<th class="cell100 column4">Value</th>
+										<th class="cell100 column6">Image</th>
+									</tr>
+								</thead>
+								<tbody id="reimbursementTableBody">
+
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
-	<!--===============================================================================================-->
-	<script src="scripts/jquery-3.2.1.min.js"></script>
-	<!--===============================================================================================-->
-	<script src="scripts/popper.js"></script>
-	<script src="scripts/bootstrap.min.js"></script>
-	<!--===============================================================================================-->
-	<script src="scripts/select2.min.js"></script>
-	<!--===============================================================================================-->
-	<script src="scripts/perfect-scrollbar.min.js"></script>
-	<script>
-		$('.js-pscroll')
-				.each(
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModalCenter" tabindex="-1"
+		role="dialog" aria-labelledby="exampleModalCenterTitle"
+		aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLongTitle">Image</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div>
+						<img id="currentReimbursementImage" style="max-height: 250px"
+							style="max-width:250px" class="img-responsive">
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+
+
+<!--===============================================================================================-->
+<script src="scripts/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+<script src="scripts/popper.js"></script>
+<script src="scripts/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+<script src="scripts/select2.min.js"></script>
+<!--===============================================================================================-->
+<script src="scripts/perfect-scrollbar.min.js"></script>
+<script>
+	$('.js-pscroll').each(
+			function() {
+				var ps = new PerfectScrollbar(this);
+
+				$(window).on('resize', function() {
+					ps.update();
+				})
+
+				$(this).on(
+						'ps-x-reach-start',
 						function() {
-							var ps = new PerfectScrollbar(this);
-
-							$(window).on('resize', function() {
-								ps.update();
-							})
-
-							$(this)
-									.on(
-											'ps-x-reach-start',
-											function() {
-												$(this)
-														.parent()
-														.find(
-																'.table100-firstcol')
-														.removeClass(
-																'shadow-table100-firstcol');
-											});
-
-							$(this).on(
-									'ps-scroll-x',
-									function() {
-										$(this).parent().find(
-												'.table100-firstcol').addClass(
-												'shadow-table100-firstcol');
-									});
-
+							$(this).parent().find('.table100-firstcol')
+									.removeClass('shadow-table100-firstcol');
 						});
-	</script>
-	<!--===============================================================================================-->
-	<script src="scripts/main.js"></script>
+
+				$(this).on(
+						'ps-scroll-x',
+						function() {
+							$(this).parent().find('.table100-firstcol')
+									.addClass('shadow-table100-firstcol');
+						});
+
+			});
+</script>
+<!--===============================================================================================-->
+<script src="scripts/main.js"></script>
 
 
 

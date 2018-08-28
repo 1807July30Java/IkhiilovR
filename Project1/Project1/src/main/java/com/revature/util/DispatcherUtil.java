@@ -1,4 +1,4 @@
-package com.revature.util;
+	package com.revature.util;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -19,6 +19,8 @@ public class DispatcherUtil {
 				if (get.equals("image")) {
 					return (ds.getImageForRequest(0));
 				}
+			}else if(entity.equals("allReimbursements")) {
+				return om.writeValueAsString(ds.allReimbursementsForEmployee(Integer.parseInt(get)));
 			}
 			
 		} catch (JsonProcessingException e) {

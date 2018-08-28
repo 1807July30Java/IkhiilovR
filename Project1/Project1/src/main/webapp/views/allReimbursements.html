@@ -1,15 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+
 
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="styles/font-awesome.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="styles/animate.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="styles/select2.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="styles/perfect-scrollbar.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="styles/util.css">
+<link rel="stylesheet" type="text/css" href="styles/main.css">
+<!--===============================================================================================-->
 
-<title>Project1 Reimbursements</title>
+
+<title>My Reimbursements</title>
 
 <!-- Bootstrap core CSS -->
 <link href="styles/bootstrap.min.css" rel="stylesheet">
@@ -24,14 +42,6 @@
 
 <!-- Custom styles for this template -->
 <link href="styles/style.css" rel="stylesheet">
-
-<link href="styles/login.css" rel="stylesheet">
-
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-
-
-
 </head>
 <body>
 
@@ -57,9 +67,13 @@
 					<li class="nav-item  px-lg-4"><a
 						class="nav-link text-uppercase text-expanded" href="profile">Homepage</a>
 						<span class="sr-only">(current)</span></li>
+					<li id="employeesNav" style="display: none"
+						class="nav-item px-lg-4"><a
+						class="nav-link text-uppercase text-expanded"
+						href="managersEmployees">Employees</a></li>
 					<li class="nav-item active px-lg-4"><a
 						class="nav-link text-uppercase text-expanded"
-						href="allReimbursements">All Reimbursement</a></li>
+						href="allReimbursements">My Reimbursement</a></li>
 					<li class="nav-item px-lg-4"><a
 						class="nav-link text-uppercase text-expanded" href="reimbursement">New
 							Reimbursement</a></li>
@@ -74,28 +88,118 @@
 
 
 
+	<div id="reimburseTable">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100 ver1">
+					<div class="table100-firstcol">
+						<table>
+							<thead>
+								<tr class="row100 head">
+									<th class="cell100 column1">Reimburse ID</th>
+								</tr>
+							</thead>
+							<tbody id="reimburseTableEmployee">
 
-
-	<div class="container" style="background-color: white;">
-		<h2>All Reimbursements</h2>
-		<br>
-		<br>
-		<div id ="imageRow" class="row">
-
-			<div class="col-md-4">
-				<div class="thumbnail">
-					<img src="dog.jpg" alt="Lights" style="width: 100%">
-					<div class="caption">
-						<p>Lorem ipsum donec id elit non mi porta gravida at eget
-							metus.</p>
+							</tbody>
+						</table>
 					</div>
 
+					<div class="wrap-table100-nextcols js-pscroll">
+						<div class="table100-nextcols">
+							<table>
+								<thead>
+									<tr class="row100 head">
+										<th class="cell100 column2">Status</th>
+										<th class="cell100 column3">Description</th>
+										<th class="cell100 column4">Value</th>
+										<th class="cell100 column6">Image</th>
+									</tr>
+								</thead>
+								<tbody id="reimbursementTableBody">
+
+								</tbody>
+							</table>
+						</div>
+					</div>
 				</div>
 			</div>
-
 		</div>
 	</div>
 
+
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModalCenter" tabindex="-1"
+		role="dialog" aria-labelledby="exampleModalCenterTitle"
+		aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLongTitle">Image</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div>
+						<img id="currentReimbursementImage" style="max-height: 250px"
+							style="max-width:250px" class="img-responsive" >
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
 </body>
-<script src="scripts/getImage.js"></script>
+
+<!--===============================================================================================-->
+<script src="scripts/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+<script src="scripts/popper.js"></script>
+<script src="scripts/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+<script src="scripts/select2.min.js"></script>
+<!--===============================================================================================-->
+<script src="scripts/perfect-scrollbar.min.js"></script>
+<script>
+	$('.js-pscroll').each(
+			function() {
+				var ps = new PerfectScrollbar(this);
+
+				$(window).on('resize', function() {
+					ps.update();
+				})
+
+				$(this).on(
+						'ps-x-reach-start',
+						function() {
+							$(this).parent().find('.table100-firstcol')
+									.removeClass('shadow-table100-firstcol');
+						});
+
+				$(this).on(
+						'ps-scroll-x',
+						function() {
+							$(this).parent().find('.table100-firstcol')
+									.addClass('shadow-table100-firstcol');
+						});
+
+			});
+</script>
+<!--===============================================================================================-->
+
+
+<script src="scripts/main.js"></script>
+
+<script src="scripts/getReimbursements.js"></script>
+
+
+
 </html>

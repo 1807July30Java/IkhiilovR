@@ -4,6 +4,7 @@ import java.io.InputStream;
 import java.util.List;
 
 import com.revature.beans.Employee;
+import com.revature.beans.Reimburse;
 import com.revature.dao.EmployeeDAO;
 import com.revature.dao.EmployeeDAOImpl;
 import com.revature.dao.ReimburseDAO;
@@ -21,6 +22,10 @@ public class DataService {
 	
 	public String getImageForRequest(int id) {
 		return rd.getImage(id);
+	}
+	
+	public List<Reimburse> allReimbursementsForEmployee(int id){
+		return rd.getReimburseByEmployeeID(id);
 	}
 
 }

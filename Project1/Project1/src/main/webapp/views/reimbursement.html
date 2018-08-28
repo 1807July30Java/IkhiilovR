@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Profile</title>
-<link
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-	crossorigin="anonymous">
+
+
+
+<script src="scripts/checkManager.js"></script>
+
 <link rel="stylesheet" href="styles/login.css">
 
 <!-- Bootstrap core CSS -->
@@ -47,14 +47,14 @@
 				<ul class="navbar-nav mx-auto">
 					<li class="nav-item px-lg-4"><a
 						class="nav-link text-uppercase text-expanded"
-						href="managerProfile">Homepage</a> <span class="sr-only">(current)</span>
+						href="profile">Homepage</a> <span class="sr-only">(current)</span>
 					</li>
-					<li class="nav-item px-lg-4"><a
+					<li id = "employeesNav" style = "display: none" class="nav-item px-lg-4"><a
 						class="nav-link text-uppercase text-expanded"
 						href="managersEmployees">Employees</a></li>
 					<li class="nav-item px-lg-4"><a
 						class="nav-link text-uppercase text-expanded"
-						href="allReimbursements">All Reimbursements</a></li>
+						href="allReimbursements">My Reimbursements</a></li>
 					<li class="nav-item active px-lg-4"><a
 						class="nav-link text-uppercase text-expanded" href="reimbursement">New Reimbursement</a></li>
 					<li class="nav-item px-lg-4"><a
@@ -116,11 +116,10 @@
 
 
 </body>
+
+
 <script src="scripts/postImage.js"></script>
 <script type="text/javascript"
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript"
-	src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js"
-	integrity="sha384-pjaaA8dDz/5BgdFUPX6M/9SUZv4d12SUPF0axWc+VRZkx5xU3daN+lYb49+Ax+Tl"
-	crossorigin="anonymous"></script>
+
 </html>

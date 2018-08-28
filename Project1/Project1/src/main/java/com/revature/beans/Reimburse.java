@@ -4,6 +4,14 @@ import java.io.InputStream;
 
 public class Reimburse {
 	
+	public Reimburse(int id, int status, int employeeID, double value, String type) {
+		super();
+		this.id = id;
+		this.status = status;
+		this.employeeID = employeeID;
+		this.value = value;
+		this.type = type;
+	}
 	public Reimburse(int status, int employeeID, double value, String type, InputStream image) {
 		super();
 		this.status = status;
@@ -18,7 +26,7 @@ public class Reimburse {
 		this.value = value;
 		this.type = type;
 		this.image = image;
-		this.status = -1;
+		this.status = 0;
 	}
 	public Reimburse(int id, int status, int employeeID, double value, String type, InputStream image) {
 		super();

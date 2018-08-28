@@ -34,6 +34,7 @@ public class SessionServlet extends HttpServlet {
 					+ "\"lastName\":\"" + session.getAttribute("lastName") + "\", " 
 					+ "\"email\":\"" + session.getAttribute("email") + "\", " 
 					+ "\"manager\":\"" + session.getAttribute("manager") + "\", " 
+					+ "\"id\":\"" + session.getAttribute("id") + "\", " 
 					+ "\"isManager\":\"" + session.getAttribute("isManager") + "\"} "); 
 		
 		}else {

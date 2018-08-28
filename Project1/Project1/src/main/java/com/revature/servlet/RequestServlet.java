@@ -66,7 +66,7 @@ public class RequestServlet extends HttpServlet {
 			EmployeeDAO getID = new EmployeeDAOImpl();
 			int employeeId = getID.getEmployeeByUsername(session.getAttribute("username").toString()).getId();
 			newReimburse.addNewRequest(new Reimburse(employeeId, Double.parseDouble(value), description, fileContent));
-			
+			response.sendRedirect("allReimbursements");
 			
 		}
 	}

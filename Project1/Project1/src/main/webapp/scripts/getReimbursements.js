@@ -18,69 +18,22 @@ function populateEmployee(xhr) {
 	if (xhr.responseText) {
 		var res = JSON.parse(xhr.responseText);
 		console.log(res);
-		for (var i = 0; i < res.length; i++) {
-			
-			var tableUsername = document.getElementById("employeeTableUsername");
-            var rowUsername = document.createElement("tr");
-            rowUsername.setAttribute("class", "row100 body");
-            tableUsername.appendChild(rowUsername);
-            
-            var username = document.createElement("td");
-            username.setAttribute("class", "cell100 column1" );
-            username.innerText = res[i].username;
-            rowUsername.append(username);
-			
-            var table = document.getElementById("employeeTableBody");
-            var row = document.createElement("tr");
-            row.setAttribute("class", "row100 head");
-            table.appendChild(row);
-            
-            var firstName = document.createElement("td");
-            firstName.setAttribute("class", "cell100 column2");
-            firstName.innerText = res[i].name;
-            
-            var lastName = document.createElement("td");
-            lastName.setAttribute("class", "cell100 column3");
-            lastName.innerText = res[i].lastname;
-            
-            var email = document.createElement("td"); 
-            lastName.setAttribute("class", "cell100 column4");
-            email.innerText = res[i].email;
-            
-            var password = document.createElement("td"); 
-            password.setAttribute("class", "cell100 column5");
-            password.innerText = res[i].password;
-            
-            var reimburseLink = document.createElement("button");
-            
-            reimburseLink.setAttribute("class", "cell100 column6");
-            reimburseLink.setAttribute("id", res[i].id);
-            reimburseLink.style.textAlign = "center";
-            reimburseLink.innerText = "View"
-            reimburseLink.setAttribute("class", "btn btn-info active");
-            reimburseLink.onclick = reimburseTable;
-            
-            row.append(firstName, lastName, email, password, reimburseLink);
-            
-            
-        }
+		if (res.isManager == 1) {
+			var nav = document.getElementById("employeesNav");
+			nav.style.display = 'block';
+		}
+		if (res.username) {
+			var ajaxString = "http://localhost:8084/Project1/data?entity=allReimbursements&get=" + res.id;
+			sendAjaxGet(ajaxString, populateReimbursement);
+		}
 	} else {
 		window.location = "http://localhost:8084/Project1/login";
 	}
 };
 
-
-function reimburseTable(){
-	
-	var table = document.getElementById("reimburseTable");
-	table.style.display = 'block';
-	
-	var ajaxString = "http://localhost:8084/Project1/data?entity=allReimbursements&get=" + this.id;
-	sendAjaxGet(ajaxString, populateReimbursement);
-	
-	
-	
-};
+window.onload = function() {
+	sendAjaxGet("http://localhost:8084/Project1/session", populateEmployee);
+}
 
 function populateReimbursement(xhr) {
 	if (xhr.responseText) {
@@ -151,8 +104,3 @@ function getImage(){
 	
 	
 };
-
-
-window.onload = function() {
-	sendAjaxGet("http://localhost:8084/Project1/data?entity=employees&get=forManager", populateEmployee);
-}

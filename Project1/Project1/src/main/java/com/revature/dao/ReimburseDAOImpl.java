@@ -13,6 +13,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
 
@@ -114,6 +115,64 @@ public class ReimburseDAOImpl implements ReimburseDAO {
 	            e.printStackTrace();
 	        }
 	        return false;
+	}
+
+	@Override
+	public byte[] getImageBytes(int id) {
+		PreparedStatement pstmt = null;
+		byte[] imageBytes = null;
+		try (Connection con = ConnectionUtil.getConnectionFromFile(filename)) {
+			
+			// use a prepared statement
+			String sql = "SELECT IMAGE FROM REIMBURSE WHERE REIMBURSE_ID = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, id);
+			ResultSet rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				imageBytes = rs.getBytes("IMAGE");
+			}
+			
+			con.close();
+			
+		 } catch (SQLException | IOException e) {
+	            e.printStackTrace();
+	        }
+		return imageBytes;
+	}
+
+	@Override
+	public List<Reimburse> getReimburseByEmployeeID(int id) {
+		List<Reimburse> rl = new ArrayList<>();
+		PreparedStatement pstmt = null;
+
+		System.out.println("ENTERED");
+		try (Connection con = ConnectionUtil.getConnectionFromFile(filename)) {
+			String sql = "SELECT * FROM REIMBURSE WHERE EMPLOYEE_ID = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, id);
+			ResultSet rs = pstmt.executeQuery();
+			
+			while (rs.next()){
+				int Reimburseid  = rs.getInt("REIMBURSE_ID");
+				int status = rs.getInt("REIMBURSE_PROCESS"); 
+				String description = rs.getString("REIMBURSE_TYPE");
+				double value = rs.getDouble("REIMBURSE_VALUE");
+		
+				
+				rl.add(new Reimburse(Reimburseid, status, id, value, description));
+			}
+	
+			con.close();
+		} catch (SQLException ex) {
+			log.info("Error getting reimbursements id: " + id + "\nsqltrace: " + ex);
+			ex.printStackTrace();
+		} catch (IOException ex) {
+			log.info("Error getting reimbursements id: " + id + "\niotrace: " + ex);
+			ex.printStackTrace();
+		}
+
+		return rl;
 	}
 
 }
