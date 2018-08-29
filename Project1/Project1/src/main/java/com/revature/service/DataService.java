@@ -27,5 +27,12 @@ public class DataService {
 	public List<Reimburse> allReimbursementsForEmployee(int id){
 		return rd.getReimburseByEmployeeID(id);
 	}
+	
+	public boolean getisAcceptRequest(int id) {
+		return rd.approveRequest(id);
+	}
+	public boolean getisDeclineRequest(int id) {
+		return rd.declineRequest(id);
+	}
 
 }

@@ -14,4 +14,6 @@ public interface ReimburseDAO {
 	public String getImage(int id);
 	public boolean addNewRequest(Reimburse r);
 	public byte[] getImageBytes(int id);
+	public boolean approveRequest(int id);
+	public boolean declineRequest(int id);
 }
