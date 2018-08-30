@@ -37,4 +37,8 @@ public class DataService {
 	public boolean addEmployee(Employee e) {
 		return ed.addEmployee(e);
 	}
+
+	public boolean updateEmployee(String field, String value, int id) {
+		return ed.updateEmployee(field, value, id);
+	}
 }

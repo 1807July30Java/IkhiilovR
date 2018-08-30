@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Employee Login</title>
+<title>Update</title>
 
 
 
@@ -33,8 +33,7 @@
 <body>
 
 	<h1 class="site-heading text-center text-white d-none d-lg-block">
-		<span class="site-heading-upper text-primary mb-3">Hello
-			Employee!</span>
+		<span class="site-heading-upper text-primary mb-3">Update</span>
 	</h1>
 
 	<!-- Navigation -->
@@ -50,7 +49,7 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav mx-auto">
-					<li class="nav-item active px-lg-4"><a
+					<li class="nav-item px-lg-4"><a
 						class="nav-link text-uppercase text-expanded" href="profile">Homepage</a>
 						<span class="sr-only">(current)</span></li>
 					<li id="employeesNav" style="display: none"
@@ -66,7 +65,7 @@
 					<li id="registerNav" style="display: none" class="nav-item px-lg-4"><a
 						class="nav-link text-uppercase text-expanded"
 						href="managersEmployees">Register</a></li>
-					<li class="nav-item px-lg-4"><a
+					<li class="nav-item active px-lg-4"><a
 						class="nav-link text-uppercase text-expanded" href="update">Update</a></li>
 					<li class="nav-item px-lg-4"><a
 						class="nav-link text-uppercase text-expanded" href="logout">Logout</a></li>
@@ -76,46 +75,69 @@
 		</div>
 	</nav>
 
-	<section class="page-section cta">
-		<div class="container">
-			<div class="row">
-				<div class="col-xl-9 mx-auto">
-					<div class="cta-inner text-center rounded">
-						<h2 class="section-heading mb-5">
-							<span class="section-heading-upper">Information</span>
-						</h2>
-						<ul class="list-unstyled list-hours mb-5 text-left mx-auto">
 
-							<li class="list-unstyled-item list-hours-item d-flex">Username
-								<span id="username" class="ml-auto"></span>
-							</li>
-							<li class="list-unstyled-item list-hours-item d-flex">Password
-								<span id="password" class="ml-auto">***********</span>
-							</li>
-							<li class="list-unstyled-item list-hours-item d-flex">First
-								Name <span id="firstName" class="ml-auto"></span>
-							</li>
-							<li class="list-unstyled-item list-hours-item d-flex">Last
-								Name <span id="lastName" class="ml-auto"></span>
-							</li>
-							<li class="list-unstyled-item list-hours-item d-flex">Email
-								<span id="email" class="ml-auto"></span>
-							</li>
-							<li class="list-unstyled-item list-hours-item d-flex">My
-								Manager's ID <span id="manager" class="ml-auto"></span>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
+	<section class="page-section clearfix">
+		<div class="login">
+			<h1>Update</h1>
+			<form method="post">
+				<input type="text" name="username" placeholder="Username"
+					required="required" />
+				<button type="submit" class="btn btn-primary btn-block btn-large">Update
+					Username (\/)</button>
+			</form>
+			<form method="post">
+				<input type="password" name="password" placeholder="Password"
+					required="required" />
+				<button type="submit" class="btn btn-primary btn-block btn-large">Update
+					Password (0.0)</button>
+			</form>
+			<form method="post">
+				<input type="text" name="firstName" placeholder="First Name"
+					required="required" />
+				<button type="submit" class="btn btn-primary btn-block btn-large">Update
+					FirstName (") (")</button>
+			</form>
+			<form method="post">
+				<input type="text" name="lastName" placeholder="Last Name"
+					required="required" />
+				<button type="submit" class="btn btn-primary btn-block btn-large">Update
+					LastName (O:3</button>
+			</form>
+			<form method="post">
+				<input id="email" type="text" name="email" required="required"
+					placeholder="Email" required="required" />
+				<button type="submit" class="btn btn-primary btn-block btn-large">Update
+					Email ^.^</button>
+
+			</form>
 		</div>
 	</section>
+</body>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+	aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Email Validation</h5>
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div id="modalBody" class="modal-body">...</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
 
 
 
 
 </body>
-
-<script src="scripts/getemployee.js"></script>
 
 </html>

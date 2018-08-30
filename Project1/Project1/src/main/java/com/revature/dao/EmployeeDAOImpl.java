@@ -223,4 +223,26 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		return false;
 	}
 
+	@Override
+	public boolean updateEmployee(String field, String value, int id) {
+		PreparedStatement pstmt;
+		if (value == null) {
+			return false;
+		}
+		String sql = "UPDATE EMPLOYEE SET " + field + " = ? WHERE EMPLOYEE_ID = ?";
+		try (Connection con = ConnectionUtil.getConnectionFromFile(filename)) {
+			
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, value);
+			pstmt.setInt(2, id);
+			
+			if (pstmt.executeUpdate() > 0) {
+				return true;
+			}
+		} catch (SQLException | IOException ex) {
+			ex.printStackTrace();
+		}
+		return false;
+	}
+
 }

@@ -11,5 +11,6 @@ public interface EmployeeDAO {
 	public boolean isValidEmployee(String username, String password);
 	public List<Employee> getEmployeesForManager(String username);
 	public boolean addEmployee(Employee e);
+	public boolean updateEmployee(String field, String value, int id);
 }
 
