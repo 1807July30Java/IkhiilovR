@@ -13,9 +13,18 @@
 
 
 
-
 <!-- Bootstrap core CSS -->
 <link href="styles/bootstrap.min.css" rel="stylesheet">
+
+<script src="scripts/jquery-3.2.1.min.js">
+	
+</script>
+<script src="scripts/popper.js">
+	
+</script>
+<script src="scripts/bootstrap.min.js">
+	
+</script>
 
 <!-- Custom fonts for this template -->
 <link
@@ -106,10 +115,14 @@
 			<form method="post">
 				<input id="email" type="text" name="email" required="required"
 					placeholder="Email" required="required" />
-				<button type="submit" class="btn btn-primary btn-block btn-large">Update
-					Email ^.^</button>
+				<button id="registerSubmit" style="display: none" type="submit"
+					class="btn btn-primary btn-block btn-large">Update Email ^.^</button>
+
 
 			</form>
+			<button id="emailBtn" onclick="checkEmail()"
+				class="btn btn-primary btn-block btn-large" data-toggle="modal"
+				data-target="#exampleModal">Check Email ^.^</button>
 		</div>
 	</section>
 </body>
@@ -140,4 +153,5 @@
 
 </body>
 <script src="scripts/checkManager.js"></script>
+<script src="scripts/checkEmail.js"></script>
 </html>
