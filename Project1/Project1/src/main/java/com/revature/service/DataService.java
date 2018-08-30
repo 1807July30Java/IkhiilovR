@@ -1,6 +1,5 @@
 package com.revature.service;
 
-import java.io.InputStream;
 import java.util.List;
 
 import com.revature.beans.Employee;
@@ -35,4 +34,7 @@ public class DataService {
 		return rd.declineRequest(id);
 	}
 
+	public boolean addEmployee(Employee e) {
+		return ed.addEmployee(e);
+	}
 }

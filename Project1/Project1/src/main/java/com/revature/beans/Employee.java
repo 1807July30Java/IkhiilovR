@@ -2,6 +2,15 @@ package com.revature.beans;
 
 public class Employee {
 	
+	public Employee(String username, String password, String name, String lastname, int manager, String email) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.name = name;
+		this.lastname = lastname;
+		this.manager = manager;
+		this.email = email;
+	}
 	public Employee(int id, String username, String password, String name, String lastname, int isManager, int manager,
 			String email) {
 		super();

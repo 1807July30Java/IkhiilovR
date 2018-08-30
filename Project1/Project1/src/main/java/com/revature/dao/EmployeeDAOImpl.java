@@ -197,4 +197,30 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		return el;
 	}
 
+	@Override
+	public boolean addEmployee(Employee e) {
+		PreparedStatement pstmt;
+		if (e == null) {
+			return false;
+		}
+
+		try (Connection con = ConnectionUtil.getConnectionFromFile(filename)) {
+			String sql = "INSERT INTO EMPLOYEE (USERNAME, PASSWORD, EMLOYEE_NAME, EMPLOYEE_LASTNAME, EMPLOYEE_MANAGER,EMPLOYEE_EMAIL) VALUES (?,?,?,?,?,?)";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, e.getUsername());
+			pstmt.setString(2, e.getPassword());
+			pstmt.setString(3, e.getName());
+			pstmt.setString(4, e.getLastname());
+			pstmt.setInt(5, e.getManager());
+			pstmt.setString(6, e.getEmail());
+			
+			if (pstmt.executeUpdate() > 0) {
+				return true;
+			}
+		} catch (SQLException | IOException ex) {
+			ex.printStackTrace();
+		}
+		return false;
+	}
+
 }

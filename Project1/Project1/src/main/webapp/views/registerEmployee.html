@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+based on https://blackrockdigital.github.io/startbootstrap-business-casual/
+and https://colorlib.com/wp/html5-and-css3-login-forms/
+-->
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>Project1 Reimbursements</title>
+
+<!-- Bootstrap core CSS -->
+<link href="styles/bootstrap.min.css" rel="stylesheet">
+
+<script src="scripts/jquery-3.2.1.min.js">
+	
+</script>
+<script src="scripts/popper.js">
+	
+</script>
+<script src="scripts/bootstrap.min.js">
+	
+</script>
+
+<!-- Custom fonts for this template -->
+<link
+	href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i"
+	rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="styles/style.css" rel="stylesheet">
+
+<link href="styles/login.css" rel="stylesheet">
+
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+
+<body>
+
+	<h1 class="site-heading text-center text-white d-none d-lg-block">
+		<span class="site-heading-upper text-primary mb-3">Registration</span>
+	</h1>
+
+	<!-- Navigation -->
+	<nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+		<div class="container">
+			<a
+				class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none"
+				href="#">Info</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarResponsive" aria-controls="navbarResponsive"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav mx-auto">
+					<li class="nav-item px-lg-4"><a
+						class="nav-link text-uppercase text-expanded" href="profile">Homepage</a>
+						<span class="sr-only">(current)</span></li>
+					<li id="employeesNav" style="display: none"
+						class="nav-item px-lg-4"><a
+						class="nav-link text-uppercase text-expanded"
+						href="managersEmployees">Employees</a></li>
+					<li class="nav-item px-lg-4"><a
+						class="nav-link text-uppercase text-expanded"
+						href="allReimbursements">My Reimbursements</a></li>
+					<li class="nav-item  px-lg-4"><a
+						class="nav-link text-uppercase text-expanded" href="reimbursement">New
+							Reimbursement</a></li>
+					<li class="nav-item active px-lg-4"><a
+						class="nav-link text-uppercase text-expanded" href="register">Register</a></li>
+					<li class="nav-item px-lg-4"><a
+						class="nav-link text-uppercase text-expanded" href="logout">Logout</a></li>
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+
+
+	<section class="page-section clearfix">
+		<div class="login">
+			<h1>Register</h1>
+			<form method="post">
+				<input type="text" name="username" placeholder="Username"
+					required="required" /> <input type="password" name="password"
+					placeholder="Password" required="required" /> <input type="text"
+					name="firstName" placeholder="First Name" required="required" />
+				<input type="text" name="lastName" placeholder="Last Name"
+					required="required" /> <input id="email" type="text" name="email"
+					required="required" placeholder="Email" required="required" />
+				<button id="emailBtn" onclick="checkEmail()"
+					class="btn btn-primary btn-block btn-large" data-toggle="modal" data-target="#exampleModal">Check Email
+					^.^</button>
+				<button id="registerSubmit" style="display: none" type="submit"
+					class="btn btn-primary btn-block btn-large">Register ^.^</button>
+			</form>
+
+		</div>
+	</section>
+</body>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Email Validation</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div id = "modalBody" class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="scripts/checkEmail.js"></script>
+
+</html>
