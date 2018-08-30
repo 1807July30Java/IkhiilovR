@@ -21,6 +21,8 @@ function populateEmployee(xhr) {
 		if (res.isManager == 1) {
 			var nav = document.getElementById("employeesNav");
 			nav.style.display = 'block';
+			var navR = document.getElementById("registerNav");
+			navR.style.display = 'block';
 		}
 		if (res.username) {
 			var ajaxString = "http://localhost:8084/Project1/data?entity=allReimbursements&get=" + res.id;

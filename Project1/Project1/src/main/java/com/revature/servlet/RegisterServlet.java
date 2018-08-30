@@ -57,13 +57,6 @@ public class RegisterServlet extends HttpServlet {
 			String email = request.getParameter("email");
 			int manager = Integer.parseInt(session.getAttribute("id").toString());
 
-			System.out.println(username);
-			System.out.println(password);
-			System.out.println(firstName);
-			System.out.println(lastName);
-			System.out.println(email);
-			System.out.println(manager);
-
 			if (ds.addEmployee(new Employee(username, password, firstName, lastName, manager, email))) {
 				response.sendRedirect("managersEmployees");
 			} else {

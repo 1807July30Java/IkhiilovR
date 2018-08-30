@@ -1,14 +1,10 @@
 package com.revature.dao;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -55,7 +51,6 @@ public class ReimburseDAOImpl implements ReimburseDAO {
 			e.printStackTrace();
 		}
 
-		System.out.println("entered");
 		try (Connection con = ConnectionUtil.getConnectionFromFile(filename)) {
 			String sql = "SELECT * FROM IMAGE WHERE ID = ?";
 			pstmt = con.prepareStatement(sql);
@@ -143,7 +138,6 @@ public class ReimburseDAOImpl implements ReimburseDAO {
 		List<Reimburse> rl = new ArrayList<>();
 		PreparedStatement pstmt = null;
 
-		System.out.println("ENTERED");
 		try (Connection con = ConnectionUtil.getConnectionFromFile(filename)) {
 			String sql = "SELECT * FROM REIMBURSE WHERE EMPLOYEE_ID = ?";
 			pstmt = con.prepareStatement(sql);

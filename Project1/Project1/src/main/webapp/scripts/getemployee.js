@@ -23,11 +23,21 @@ function populateEmployee(xhr) {
 			document.getElementById("password").innerText = res.password;
 			document.getElementById("firstName").innerText = res.firstName;
 			document.getElementById("lastName").innerText = res.lastName;
-			document.getElementById("manager").innerText = res.manager;
+
+			if (res.manager == 0) {
+				document.getElementById("manager").innerText = "CEO";
+			} else {
+				document.getElementById("manager").innerText = res.manager;
+			}
 			document.getElementById("email").innerText = res.email;
-		}if (res.isManager == 1) {
+
+		}
+		if (res.isManager == 1) {
 			var nav = document.getElementById("employeesNav");
 			nav.style.display = 'block';
+
+			var navR = document.getElementById("registerNav");
+			navR.style.display = 'block';
 		}
 	} else {
 		window.location = "http://localhost:8084/Project1/login";

@@ -29,7 +29,11 @@ public class ProfileServlet extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		// check whether a Session exists
 		if(session != null && session.getAttribute("username") != null ) {
-			request.getRequestDispatcher("views/profile.html").forward(request, response);
+			if(session.getAttribute("isManager").equals(1)) {
+				request.getRequestDispatcher("views/managerHP.html").forward(request, response);
+			}else {
+				request.getRequestDispatcher("views/profile.html").forward(request, response);
+			}
 		}else {
 			response.sendRedirect("login");
 		}
