@@ -20,7 +20,13 @@ function populateEmployee(xhr) {
 		console.log(res);
 		if (res.username) {
 			document.getElementById("username").innerText = res.username;
-			document.getElementById("password").innerText = res.password;
+			
+			var pass = ""
+			for(var i =0; i<res.password.length;i++){
+				pass +="*";
+			}
+
+			document.getElementById("password").innerText = pass;
 			document.getElementById("firstName").innerText = res.firstName;
 			document.getElementById("lastName").innerText = res.lastName;
 
